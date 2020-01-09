@@ -2,7 +2,7 @@ Summary: A utility for creating TTY dialog boxes
 Name: dialog
 %define dialogsubversion 20080819
 Version: 1.1
-Release: 9.%{dialogsubversion}.1%{?dist}
+Release: 10.%{dialogsubversion}%{?dist}
 License: LGPLv2
 Group: Applications/System
 URL: http://invisible-island.net/dialog/dialog.html
@@ -12,6 +12,7 @@ BuildRequires: ncurses-devel gettext findutils libtool
 Patch1: dialog-1.1-20070227-incdir.patch
 Patch2: dialog-1.1-20071028-multilib.patch
 Patch3: dialog-1.1-20071028-libs.patch
+Patch4: dialog-1.1-20080819-multigauge.patch
 
 %description
 Dialog is a utility that allows you to show dialog boxes (containing
@@ -38,6 +39,7 @@ dialog library.
 %patch1 -p1 -b .incdir
 %patch2 -p1 -b .multilib
 %patch3 -p1 -b .libs
+%patch4 -p1 -b .multigauge
 
 %build
 %configure \
@@ -86,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/dialog.*
 
 %changelog
+* Wed Sep 07 2016 Miroslav Lichvar <mlichvar@redhat.com> - 1.1-10.20080819
+- fix crash with multiple gauges (#1198362)
+
 * Mon Nov 30 2009 Dennis Gregorovic <dgregor@redhat.com> - 1.1-9.20080819.1
 - Rebuilt for RHEL 6
 
