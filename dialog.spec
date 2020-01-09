@@ -2,7 +2,7 @@ Summary: A utility for creating TTY dialog boxes
 Name: dialog
 %global dialogsubversion 20130523
 Version: 1.2
-Release: 4.%{dialogsubversion}%{?dist}
+Release: 5.%{dialogsubversion}%{?dist}
 License: LGPLv2
 Group: Applications/System
 URL: http://invisible-island.net/dialog/dialog.html
@@ -11,6 +11,7 @@ BuildRequires: ncurses-devel gettext findutils libtool
 Patch1: dialog-incdir.patch
 Patch2: dialog-multilib.patch
 Patch3: dialog-libs.patch
+Patch4: dialog-formkeys.patch
 
 %description
 Dialog is a utility that allows you to show dialog boxes (containing
@@ -37,6 +38,7 @@ dialog library.
 %patch1 -p1 -b .incdir
 %patch2 -p1 -b .multilib
 %patch3 -p1 -b .libs
+%patch4 -p1 -b .formkeys
 
 %build
 %configure \
@@ -78,6 +80,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/libdialog.{,l}a
 %{_mandir}/man3/dialog.*
 
 %changelog
+* Fri Apr 06 2018 Miroslav Lichvar <mlichvar@redhat.com> - 1.2-5.20130523
+- add left/right arrow keys to navigation bindings of form window (#1368333)
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.2-4.20130523
 - Mass rebuild 2014-01-24
 
