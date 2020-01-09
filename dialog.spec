@@ -2,7 +2,7 @@ Summary: A utility for creating TTY dialog boxes
 Name: dialog
 %global dialogsubversion 20130523
 Version: 1.2
-Release: 2.%{dialogsubversion}%{?dist}
+Release: 4.%{dialogsubversion}%{?dist}
 License: LGPLv2
 Group: Applications/System
 URL: http://invisible-island.net/dialog/dialog.html
@@ -78,6 +78,12 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/libdialog.{,l}a
 %{_mandir}/man3/dialog.*
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.2-4.20130523
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.2-3.20130523
+- Mass rebuild 2013-12-27
+
 * Fri May 24 2013 Miroslav Lichvar <mlichvar@redhat.com> - 1.2-2.20130523
 - update to 1.2-20130523
 
@@ -188,7 +194,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/libdialog.{,l}a
 * Fri Aug 27 2004 Harald Hoyer <harald@redhat.com> 1.0-20040731-1
 - new version 1.0-20040731
 
-* Wed Jul 29 2004 Harald Hoyer <harald@redhat.com> 1.0-20040728-1
+* Thu Jul 29 2004 Harald Hoyer <harald@redhat.com> 1.0-20040728-1
 - new version 1.0-20040728
 
 * Wed Jul 28 2004 Harald Hoyer <harald@redhat.de> 1.0-20040721-1
